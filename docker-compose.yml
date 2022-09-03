@@ -128,8 +128,10 @@ services:
     environment:
 #      - ADMIN_USER=${ADMIN_USER:-promo}
 #      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-promo}
-       - ADMIN_USER=admin
-       - ADMIN_PASSWORD=JDJhJDEwJEVCNmdaNEg2Ti5iejRMYkF3MFZhZ3VtV3E1SzBWZEZ5Q3VWc0tzOEJwZE9TaFlZdEVkZDhX
+      #  - ADMIN_USER=admin
+      #  - ADMIN_PASSWORD=JDJhJDEwJEVCNmdaNEg2Ti5iejRMYkF3MFZhZ3VtV3E1SzBWZEZ5Q3VWc0tzOEJwZE9TaFlZdEVkZDhX
+      - ADMIN_USER=${ADMIN_USER:-admin}
+      - ADMIN_PASSWORD=JDJhJDEwJEo3LmwvZjUzeVFZNDJidEE0ZXJhby40YUoybXMyb2pldUxhLmJpa1BXeG9PVWg1Ry9PS2l5
     configs:
       - source: caddy_config
         target: /etc/caddy/Caddyfile

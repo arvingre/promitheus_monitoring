@@ -39,5 +39,5 @@
  #firewall-cmd --zone=public --add-port=2377/tcp --permanent
  # firewall-cmd --reload
 
- # docker swarm  init    --advertise-addr  15.164.40.8:2377
+ # docker swarm  init    --advertise-addr  15.164.xx.x:2377
  sh deploy.sh

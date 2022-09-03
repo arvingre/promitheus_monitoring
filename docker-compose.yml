@@ -20,6 +20,8 @@ configs:
 services:
   loki:
     image: zet694/zet694_loki:k23-aee064d
+    environment:
+      - TZ=Asia/Shanghai
     volumes:
       - loki-data:/data/loki
     deploy:
@@ -33,6 +35,8 @@ services:
 
   promtail:
     image: zet694/zet694_promtail:master-7212564
+    environment:
+      - TZ=Asia/Shanghai
     volumes:
       - /usr/local/nginx/logs:/var/log
     deploy:
@@ -74,6 +78,7 @@ services:
     networks:
       - net
     environment:
+      - TZ=Asia/Shanghai
       - NODE_ID={{.Node.ID}}
     volumes:
       - /proc:/host/proc:ro
@@ -96,6 +101,8 @@ services:
 
   prometheus:
     image: zet694/zet694_prometheus
+    environment:
+      - TZ=Asia/Shanghai
     networks:
       - net
     command:
@@ -130,6 +137,7 @@ services:
 #      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-promo}
       #  - ADMIN_USER=admin
       #  - ADMIN_PASSWORD=JDJhJDEwJEVCNmdaNEg2Ti5iejRMYkF3MFZhZ3VtV3E1SzBWZEZ5Q3VWc0tzOEJwZE9TaFlZdEVkZDhX
+      - TZ=Asia/Shanghai
       - ADMIN_USER=${ADMIN_USER:-admin}
       - ADMIN_PASSWORD=JDJhJDEwJEo3LmwvZjUzeVFZNDJidEE0ZXJhby40YUoybXMyb2pldUxhLmJpa1BXeG9PVWg1Ry9PS2l5
     configs:

@@ -126,3 +126,6 @@ When a node-exporter container starts `node-meta.prom` is generated with the fol
 ```bash
 "node_meta{node_id=\"$NODE_ID\", node_name=\"$NODE_NAME\"} 1"
 ```
+
+## about overlay net problem 
+由于之前没有详细查看docker overlay网络的使用限制，一直以为只要docker的版本保持在1.9.1+就可以了。后来又查了下，发现还有一个限制：内核版本大于等于3.16。于是赶紧查看了下内核版本：

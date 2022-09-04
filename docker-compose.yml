@@ -50,7 +50,8 @@ services:
       - net
 
   grafana:
-    image: zet694/zet694_grafana:7.0.4
+    # image: zet694/zet694_grafana:7.0.4
+    image: harbor.tgceshi.com/loging/grafana:8.0.4
     networks:
       - net
     # environment:

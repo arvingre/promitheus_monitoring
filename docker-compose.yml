@@ -19,7 +19,8 @@ configs:
 
 services:
   loki:
-    image: zet694/zet694_loki:k23-aee064d
+    #image: zet694/zet694_loki:k23-aee064d
+    image: harbor.tgceshi.com/loging/loki:pro-220905
     environment:
       - TZ=Asia/Shanghai
     volumes:
@@ -34,7 +35,8 @@ services:
       - net
 
   promtail:
-    image: zet694/zet694_promtail:master-7212564
+    #image: zet694/zet694_promtail:master-7212564
+    image: harbor.tgceshi.com/loging/promtail:pro-220905
     environment:
       - TZ=Asia/Shanghai
     volumes:
@@ -51,7 +53,7 @@ services:
 
   grafana:
     # image: zet694/zet694_grafana:7.0.4
-    image: harbor.tgceshi.com/loging/grafana:8.0.4
+    image: harbor.tgceshi.com/loging/grafana:9.1.2
     networks:
       - net
     # environment:
@@ -131,6 +133,7 @@ services:
     ports:
       - "0.0.0.0:3000:3000"
       - "0.0.0.0:9090:9090"
+      - "0.0.0.0:3100:3100"
     networks:
       - net
     environment:

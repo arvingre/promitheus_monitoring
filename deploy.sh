@@ -1,3 +1,3 @@
 ADMIN_USER=admin
 ADMIN_PASSWORD=admin
-docker stack deploy -c docker-compose.yml mon
+docker stack deploy -c docker-compose.yml mon --with-registry-auth
